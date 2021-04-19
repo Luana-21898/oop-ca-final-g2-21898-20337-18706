@@ -1,6 +1,5 @@
 package com.company;
 
-
 public class Student extends User {
 
     private final Course course;
@@ -17,4 +16,3 @@ public class Student extends User {
         this.course = course;
     }
 }
-

@@ -7,4 +7,3 @@ public class Fees extends Student{
         super(firstName, lastName, numberDoc, emailAddress, loginId, password, course);
     }
 }
-

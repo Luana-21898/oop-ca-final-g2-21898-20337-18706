@@ -2,8 +2,8 @@ package com.company;
 
 public class FacultyMember extends User{
 
-        private Fees fees;
-        private Grades grades;
+    private Fees fees;
+    private Grades grades;
 
     public FacultyMember(String firstName, String lastName, String docNumber,
                          String emailAddress, String loginId, String password, String department,
@@ -12,4 +12,7 @@ public class FacultyMember extends User{
     }
 
 
+    public FacultyMember() {
+
+    }
 }

@@ -1,6 +1,5 @@
 package com.company;
 
-
 public class Admin extends User {
 
     private Course courses;
@@ -8,6 +7,11 @@ public class Admin extends User {
     private Student student;
 //    private String password;
 
+    public Admin(String firstName, String lastName, String docNumber,
+                 String emailAddress, String loginId, String password) {
+        super();
+        this.password = password;
+    }
 
     //Creating Courses
     public Course createCourse(String nameCourse, String level, String weekDays, String duration, double fees) {
