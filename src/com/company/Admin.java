@@ -5,7 +5,6 @@ public class Admin extends User {
     private Student student;
     private FacultyMember facultyMember;
     private Courses courses;
-    private String id;
     private String password;
     private Lecturer lecturer;
     private Fees fees;
@@ -13,6 +12,7 @@ public class Admin extends User {
 
     public Admin(String firstName, String lastName, String id, String password) {
         super(firstName, lastName, id, password);
+        this.password = password;
     }
 
 
@@ -32,5 +32,9 @@ public class Admin extends User {
 
         this.courses = new Courses(nameCourse, nameLecturer);
         return this.courses;
+    }
+
+    public String getPassword(){
+        return this.password;
     }
 }
