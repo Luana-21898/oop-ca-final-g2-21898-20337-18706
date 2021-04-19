@@ -2,11 +2,15 @@ package com.company;
 
 public class FacultyMember extends User{
 
-    private String fees;
-    private String grades;
 
-    public FacultyMember(String firstName, String lastName, String id, String password) {
-        super(firstName, lastName, id, password);
+
+    public FacultyMember(String firstName, String lastName, String numberDoc,
+                         String emailAddress, String loginId, String password, Course course) {
+
+    }
+
+    public FacultyMember() {
+
     }
 
     public void Fees(String firstName, String lastName, String id, String password) {
