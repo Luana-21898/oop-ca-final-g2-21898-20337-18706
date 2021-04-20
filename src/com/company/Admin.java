@@ -25,8 +25,8 @@ public class Admin extends User {
                                              String emailAddress, String loginId, String password, String department,
                                              String jobTitle) {
 
-        this.facultyMember = new FacultyMember(firstName, lastName, docNumber, emailAddress, loginId, password, department,
-                jobTitle);
+        this.facultyMember = new FacultyMember(firstName, lastName, docNumber, emailAddress, loginId, password,
+                department, jobTitle);
         return this.facultyMember;
     }
 
