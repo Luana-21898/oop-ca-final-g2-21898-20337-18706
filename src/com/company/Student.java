@@ -1,18 +1,78 @@
 package com.company;
 
-public class Student extends User {
+public class Student {
+    String id;
+    String name;
+    String password;
+    String contactNo;
+    String semester;
+    String classId;
 
-    private final Course course;
-
-    public Student(String firstName, String lastName, String numberDoc,
-                   String emailAddress, String loginId, String password, Course course) {
-
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.numberDoc = numberDoc;
-        this.emailAddress = emailAddress;
-        this.loginId = loginId;
+    public Student(String id, String name, String password, String contactNo, String semester, String classId) {
+        this.id = id;
+        this.name = name;
         this.password = password;
-        this.course = course;
+        this.contactNo = contactNo;
+        this.semester = semester;
+        this.classId = classId;
+    }
+
+    public String getClassId() {
+        return classId;
+    }
+
+    public void setClassId(String classId) {
+        this.classId = classId;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getContactNo() {
+        return contactNo;
+    }
+
+    public void setContactNo(String contactNo) {
+        this.contactNo = contactNo;
+    }
+
+    public String getSemester() {
+        return semester;
+    }
+
+    public void setSemester(String semester) {
+        this.semester = semester;
+    }
+
+    @Override
+    public String toString() {
+        return ("Student - "
+                + "ID - " + id + " - "
+                + "Name - " + name + " - "
+                + "Password - " + password + " - "
+                + "Contact No - " + contactNo + " - "
+                + "Semester - " + semester + " - "
+                + "Class ID - " + classId);
     }
 }
