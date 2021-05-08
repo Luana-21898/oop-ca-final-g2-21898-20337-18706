@@ -6,23 +6,23 @@ public class Student {
     String password;
     String contactNo;
     String semester;
-    String classId;
+    String classRoomId;
 
-    public Student(String id, String name, String password, String contactNo, String semester, String classId) {
+    public Student(String id, String name, String password, String contactNo, String semester, String classRoomId) {
         this.id = id;
         this.name = name;
         this.password = password;
         this.contactNo = contactNo;
         this.semester = semester;
-        this.classId = classId;
+        this.classRoomId = classRoomId;
     }
 
-    public String getClassId() {
-        return classId;
+    public String getClassRoomId() {
+        return classRoomId;
     }
 
     public void setClassId(String classId) {
-        this.classId = classId;
+        this.classRoomId = classRoomId;
     }
 
     public String getId() {
@@ -73,6 +73,6 @@ public class Student {
                 + "Password - " + password + " - "
                 + "Contact No - " + contactNo + " - "
                 + "Semester - " + semester + " - "
-                + "Class ID - " + classId);
+                + "Class ID - " + classRoomId);
     }
 }

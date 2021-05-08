@@ -106,11 +106,11 @@ public class StudentScreen extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 DbOperations dbOperations = null;
-                String classId = String.valueOf(classCB.getSelectedItem());
+                String classRoomId = String.valueOf(classCB.getSelectedItem());
                 try {
                     dbOperations = new DbOperations();
                     Student student = new Student(idTF.getText().toString(),nameTF.getText().toString(),passwordTF.getText().toString(),
-                            contactNoTF.getText().toString(),semesterTF.getText().toString(), classId);
+                            contactNoTF.getText().toString(),semesterTF.getText().toString(), classRoomId);
                     dbOperations.addStudent(student);
                     listModel.addElement(student);
 

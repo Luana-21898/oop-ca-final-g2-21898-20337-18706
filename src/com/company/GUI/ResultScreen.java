@@ -26,7 +26,7 @@ public class ResultScreen extends JFrame {
 
     JList<ExamResult> list;
     DefaultListModel<ExamResult> listModel;
-    String[] grades = {"A+","A","A-","B+","B","B-","C+","C","C-","D+","D","F"};
+    String[] grades = {"A","B","C","D","E","F"};
 
     public ResultScreen() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -64,7 +64,7 @@ public class ResultScreen extends JFrame {
 
         lecturersCB = new JComboBox<>();
         lecturersCB.setBounds(50, 240, 150, 25);
-        lecturersCB.setToolTipText("Select lecturer id");
+        lecturersCB.setToolTipText("Select lecturer Id");
         setLecturerComboBox();
         panel1.add(lecturersCB);
 

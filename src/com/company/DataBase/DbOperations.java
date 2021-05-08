@@ -18,9 +18,9 @@ public class DbOperations {
     }
 
     public void addStudent(Student student) throws SQLException {
-        statement.execute("Insert into Student(studentId,studentName,password,contactPhone,semester,classId)" +
+        statement.execute("Insert into Student(studentId,studentName,password,contactPhone,semester,classRoomId)" +
                 " VALUES ('" + student.getId() + "' , '" + student.getName() + "' , '" + student.getPassword() + "' , '"
-                + student.getContactNo() + "' , '" + student.getSemester() + "' , '" + student.getClassId() + "' " + " )");
+                + student.getContactNo() + "' , '" + student.getSemester() + "' , '" + student.getClassRoomId() + "' " + " )");
     }
 
     public DefaultListModel<Student> getStudents(String query) {
