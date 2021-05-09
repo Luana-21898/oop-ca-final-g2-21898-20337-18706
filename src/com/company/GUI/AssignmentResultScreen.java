@@ -15,9 +15,15 @@ public class AssignmentResultScreen extends JFrame {
 
     JPanel panel1;
 
+    JLabel assignDetText;
+    JLabel studentText;
+    JLabel moduleText;
+    JLabel marksText;
+    JLabel obtainedText;
+
     JTextField assignmentDetailsTF;
     JComboBox<String> studentCB;
-    JComboBox<String> courseCB;
+    JComboBox<String> moduleCB;
     JTextField totalMarksTF;
     JTextField obtainedMarksTF;
 
@@ -42,27 +48,52 @@ public class AssignmentResultScreen extends JFrame {
             throwables.printStackTrace();
         }
 
+        assignDetText = new JLabel();
+        assignDetText.setBounds(50, 30, 150, 25);
+        assignDetText.setText("Assignment Details");
+        panel1.add(assignDetText);
+
         assignmentDetailsTF = new JTextField();
         assignmentDetailsTF.setBounds(50, 60, 150, 25);
         assignmentDetailsTF.setToolTipText("Enter assignment details");
         panel1.add(assignmentDetailsTF);
 
+        studentText = new JLabel();
+        studentText.setBounds(50, 90, 150, 25);
+        studentText.setText("Student ID");
+        panel1.add(studentText);
+
         studentCB = new JComboBox<>();
         studentCB.setBounds(50, 120, 150, 25);
-        studentCB.setToolTipText("Select student id");
+        studentCB.setToolTipText("Select student ID");
         setStudentComboBox();
         panel1.add(studentCB);
 
-        courseCB = new JComboBox<>();
-        courseCB.setBounds(50, 180, 150, 25);
-        courseCB.setToolTipText("Select course id");
+        moduleText = new JLabel();
+        moduleText.setBounds(50, 150, 150, 25);
+        moduleText.setText("Module ID");
+        panel1.add(moduleText);
+
+        moduleCB = new JComboBox<>();
+        moduleCB.setBounds(50, 180, 150, 25);
+        moduleCB.setToolTipText("Select module ID");
         setCourseComboBox();
-        panel1.add(courseCB);
+        panel1.add(moduleCB);
+
+        marksText = new JLabel();
+        marksText.setBounds(50, 210, 150, 25);
+        marksText.setText("Total Marks");
+        panel1.add(marksText);
 
         totalMarksTF = new JTextField();
         totalMarksTF.setBounds(50,240,150,25);
         totalMarksTF.setToolTipText("Enter total marks");
         panel1.add(totalMarksTF);
+
+        obtainedText = new JLabel();
+        obtainedText.setBounds(50, 270, 150, 25);
+        obtainedText.setText("Obtained Marks");
+        panel1.add(obtainedText);
 
         obtainedMarksTF = new JTextField();
         obtainedMarksTF.setBounds(50,300,150,25);
@@ -100,7 +131,7 @@ public class AssignmentResultScreen extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     String studentId = String.valueOf(studentCB.getSelectedItem());
-                    String courseId = String.valueOf(courseCB.getSelectedItem());
+                    String courseId = String.valueOf(moduleCB.getSelectedItem());
                     double totalMarks = Double.parseDouble(totalMarksTF.getText().toString());
                     double obtainedMarks = Double.parseDouble(obtainedMarksTF.getText().toString());
 
@@ -151,7 +182,7 @@ public class AssignmentResultScreen extends JFrame {
 
             for (int i = 0; i < courses.size(); i++) {
                 Course course = courses.get(i);
-                courseCB.addItem(course.getCourseId());
+                moduleCB.addItem(course.getCourseId());
             }
 
         } catch (SQLException throwables) {

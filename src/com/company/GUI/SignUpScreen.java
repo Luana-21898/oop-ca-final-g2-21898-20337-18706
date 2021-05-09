@@ -100,7 +100,7 @@ public class SignUpScreen extends JFrame {
                         throwables.printStackTrace();
                     }
                     JOptionPane.showMessageDialog(null,
-                            "Account has been created, Enter ID or Password again to log in",
+                            "Account has been created. Enter ID or Password to Log in",
                             "Account Created",
                             JOptionPane.INFORMATION_MESSAGE);
                     dispose();

@@ -67,7 +67,7 @@ import java.awt.event.ActionListener;
             classesStudentB.setBounds(180, 370, 120, 30);
             panel1.add(classesStudentB);
 
-            logOutButton = new JButton("LOG OUT");
+            logOutButton = new JButton("Log Out");
             logOutButton.setBounds(640, 370, 100, 30);
             panel1.add(logOutButton);
 

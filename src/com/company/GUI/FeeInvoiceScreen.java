@@ -14,12 +14,19 @@ public class FeeInvoiceScreen extends JFrame {
 
     JPanel panel1;
 
-    JComboBox<String> studentIdCB;
+    JLabel studentText;
+    JLabel feeText;
+    JLabel instText;
+    JLabel remText;
+    JLabel dueText;
+
     JTextField feeTF;
     JTextField installmentTF;
     JTextField remainingTF;
-    JComboBox<String> statusCB;
     JTextField dueDateTF;
+
+    JComboBox<String> statusCB;
+    JComboBox<String> studentIdCB;
 
     JButton addButton;
     JButton backButton;
@@ -42,26 +49,51 @@ public class FeeInvoiceScreen extends JFrame {
             throwables.printStackTrace();
         }
 
+        studentText = new JLabel();
+        studentText.setBounds(50, 30, 150, 25);
+        studentText.setText("Student ID");
+        panel1.add(studentText);
+
         studentIdCB = new JComboBox<>();
         studentIdCB.setBounds(50, 60, 150, 25);
-        studentIdCB.setToolTipText("Select student Id");
+        studentIdCB.setToolTipText("Select Student ID");
         setStudentComboBox();
         panel1.add(studentIdCB);
 
+        instText = new JLabel();
+        instText.setBounds(50, 90, 150, 25);
+        instText.setText("Installment");
+        panel1.add(instText);
+
         installmentTF = new JTextField();
         installmentTF.setBounds(50, 120, 150, 25);
-        installmentTF.setToolTipText("Enter installment");
+        installmentTF.setToolTipText("Enter Installment");
         panel1.add(installmentTF);
+
+        feeText = new JLabel();
+        feeText.setBounds(50, 150, 150, 25);
+        feeText.setText("Fee");
+        panel1.add(feeText);
 
         feeTF = new JTextField();
         feeTF.setBounds(50, 180, 150, 25);
-        feeTF.setToolTipText("Enter fee");
+        feeTF.setToolTipText("Enter Fee");
         panel1.add(feeTF);
+
+        remText = new JLabel();
+        remText.setBounds(50, 210, 150, 25);
+        remText.setText("Remaining Fee");
+        panel1.add(remText);
 
         remainingTF = new JTextField();
         remainingTF.setBounds(50,240,150,25);
-        remainingTF.setToolTipText("Enter remaining fee");
+        remainingTF.setToolTipText("Enter remaining Fee");
         panel1.add(remainingTF);
+
+        dueText = new JLabel();
+        dueText.setBounds(50, 270, 150, 25);
+        dueText.setText("Due Date");
+        panel1.add(dueText);
 
         dueDateTF = new JTextField();
         dueDateTF.setBounds(50,300,150,25);

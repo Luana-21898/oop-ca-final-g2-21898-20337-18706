@@ -14,6 +14,12 @@ public class CoursesScreen extends JFrame {
 
     JPanel panel1;
 
+    JLabel idText;
+    JLabel nameText;
+    JLabel creditText;
+    JLabel semesterText;
+    JLabel lecturerText;
+
     JTextField idTF;
     JTextField nameTF;
     JTextField semesterTF;
@@ -45,29 +51,53 @@ public class CoursesScreen extends JFrame {
 
         listModel = dbOperations.getCourses("Select * from Course");
 
+        idText = new JLabel();
+        idText.setBounds(50, 30, 150, 25);
+        idText.setText("Module ID");
+        panel1.add(idText);
+
         idTF = new JTextField();
         idTF.setBounds(50, 60, 150, 25);
-        idTF.setToolTipText("Enter course id");
+        idTF.setToolTipText("Enter module ID");
         panel1.add(idTF);
+
+        nameText = new JLabel();
+        nameText.setBounds(50, 90, 150, 25);
+        nameText.setText("Module Name");
+        panel1.add(nameText);
 
         nameTF = new JTextField();
         nameTF.setBounds(50, 120, 150, 25);
-        nameTF.setToolTipText("Enter course name");
+        nameTF.setToolTipText("Enter module name");
         panel1.add(nameTF);
+
+        creditText = new JLabel();
+        creditText.setBounds(50, 150, 150, 25);
+        creditText.setText("Module Hours");
+        panel1.add(creditText);
 
         creditHoursTF = new JTextField();
         creditHoursTF.setBounds(50, 180, 150, 25);
-        creditHoursTF.setToolTipText("Enter credit hours");
+        creditHoursTF.setToolTipText("Enter module hours");
         panel1.add(creditHoursTF);
+
+        semesterText = new JLabel();
+        semesterText.setBounds(50, 210, 150, 25);
+        semesterText.setText("Semester");
+        panel1.add(semesterText);
 
         semesterTF = new JTextField();
         semesterTF.setBounds(50, 240, 150, 25);
-        semesterTF.setToolTipText("Enter semester");
+        semesterTF.setToolTipText("Enter Semester");
         panel1.add(semesterTF);
 
+        lecturerText = new JLabel();
+        lecturerText.setBounds(50, 270, 150, 25);
+        lecturerText.setText("Lecturer");
+        panel1.add(lecturerText);
 
         lecturersCB = new JComboBox();
-        lecturersCB.setToolTipText("Select relevant lecturer");
+        lecturersCB.setToolTipText("Select Lecturer");
         lecturersCB.setBounds(50, 300, 150, 25);
         setLecturerComboBox();
         panel1.add(lecturersCB);

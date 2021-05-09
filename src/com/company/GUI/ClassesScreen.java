@@ -13,6 +13,8 @@ public class ClassesScreen extends JFrame {
 
     JPanel panel1;
 
+    JLabel idText;
+
     JTextField idTF;
 
     JButton addButton;
@@ -36,14 +38,19 @@ public class ClassesScreen extends JFrame {
             throwables.printStackTrace();
         }
 
+        idText = new JLabel();
+        idText.setBounds(50, 30, 150, 25);
+        idText.setText("Classroom ID");
+        panel1.add(idText);
+
         idTF = new JTextField();
         idTF.setBounds(50,60,150,25);
-        idTF.setToolTipText("Enter class room Id");
+        idTF.setToolTipText("Enter Classroom ID");
         panel1.add(idTF);
 
 
         JLabel label = new JLabel();
-        label.setText("All Class Rooms");
+        label.setText("All Classrooms");
         label.setBounds(500, 10, 200, 25);
         panel1.add(label);
 

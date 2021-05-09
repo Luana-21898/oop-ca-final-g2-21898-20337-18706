@@ -43,7 +43,7 @@ public class AnnouncementScreen extends JFrame {
 
         detailsLabel = new JLabel();
         detailsLabel.setText("Announcement");
-        detailsLabel.setBounds(50, 40, 200, 25);
+        detailsLabel.setBounds(50, 40, 150, 25);
         panel1.add(detailsLabel);
 
         detailsField = new JTextField();
@@ -53,7 +53,7 @@ public class AnnouncementScreen extends JFrame {
 
         semesterLabel = new JLabel();
         semesterLabel.setText("Semester");
-        semesterLabel.setBounds(50, 100, 200, 25);
+        semesterLabel.setBounds(50, 100, 150, 25);
         panel1.add(semesterLabel);
 
         semesterField = new JTextField();

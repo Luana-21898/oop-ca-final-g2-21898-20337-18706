@@ -16,10 +16,15 @@ public class ResultScreen extends JFrame {
 
     JPanel panel1;
 
+    JLabel studentText;
+    JLabel gradesText;
+    JLabel lecturerText;
+    JLabel moduleText;
+
     JComboBox<String> studentsCB;
     JComboBox<String> gradesCB;
     JComboBox<String> lecturersCB;
-    JComboBox<String> coursesCB;
+    JComboBox<String> modulesCB;
 
     JButton addButton;
     JButton backButton;
@@ -45,26 +50,46 @@ public class ResultScreen extends JFrame {
         }
         listModel = dbOperations.getExamResult("Select * from ExamResult");
 
+        studentText = new JLabel();
+        studentText.setBounds(50, 30, 150, 25);
+        studentText.setText("Student ID");
+        panel1.add(studentText);
+
         studentsCB = new JComboBox<>();
         studentsCB.setBounds(50, 60, 150, 25);
-        studentsCB.setToolTipText("Enter Student Id");
+        studentsCB.setToolTipText("Enter Student ID");
         setStudentComboBox();
         panel1.add(studentsCB);
+
+        gradesText = new JLabel();
+        gradesText.setBounds(50, 90, 150, 25);
+        gradesText.setText("Grade");
+        panel1.add(gradesText);
 
         gradesCB = new JComboBox<>(grades);
         gradesCB.setBounds(50, 120, 150, 25);
         gradesCB.setToolTipText("Select grade obtained");
         panel1.add(gradesCB);
 
-        coursesCB = new JComboBox<>();
-        coursesCB.setBounds(50, 180, 150, 25);
-        coursesCB.setToolTipText("Select course Id");
+        moduleText = new JLabel();
+        moduleText.setBounds(50, 150, 150, 25);
+        moduleText.setText("Module ID");
+        panel1.add(moduleText);
+
+        modulesCB = new JComboBox<>();
+        modulesCB.setBounds(50, 180, 150, 25);
+        modulesCB.setToolTipText("Select module ID");
         setCourseComboBox();
-        panel1.add(coursesCB);
+        panel1.add(modulesCB);
+
+        lecturerText = new JLabel();
+        lecturerText.setBounds(50, 210, 150, 25);
+        lecturerText.setText("Lecturer ID");
+        panel1.add(lecturerText);
 
         lecturersCB = new JComboBox<>();
         lecturersCB.setBounds(50, 240, 150, 25);
-        lecturersCB.setToolTipText("Select lecturer Id");
+        lecturersCB.setToolTipText("Select Lecturer ID");
         setLecturerComboBox();
         panel1.add(lecturersCB);
 
@@ -96,7 +121,7 @@ public class ResultScreen extends JFrame {
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String courseId = String.valueOf(coursesCB.getSelectedItem());
+                String courseId = String.valueOf(modulesCB.getSelectedItem());
                 String lecturerId = String.valueOf(lecturersCB.getSelectedItem());
                 String studentId = String.valueOf(studentsCB.getSelectedItem());
                 String grade= String.valueOf(gradesCB.getSelectedItem());
@@ -162,7 +187,7 @@ public class ResultScreen extends JFrame {
 
             for (int i = 0; i < courses.size(); i++) {
                 Course course = courses.get(i);
-                coursesCB.addItem(course.getCourseId());
+                modulesCB.addItem(course.getCourseId());
             }
 
         } catch (SQLException throwables) {

@@ -13,6 +13,11 @@ public class LecturerScreen extends JFrame {
 
     JPanel panel1;
 
+    JLabel idText;
+    JLabel nameText;
+    JLabel contactText;
+    JLabel passwordText;
+
     JTextField idTF;
     JTextField nameTF;
     JTextField contactNoTF;
@@ -39,20 +44,40 @@ public class LecturerScreen extends JFrame {
         }
         listModel = dbOperations.getLecturers("Select * from Lecturer");
 
+        idText = new JLabel();
+        idText.setBounds(50, 30, 150, 25);
+        idText.setText("Lecturer ID");
+        panel1.add(idText);
+
         idTF = new JTextField();
         idTF.setBounds(50,60,150,25);
-        idTF.setToolTipText("Enter lecturer id");
+        idTF.setToolTipText("Enter Lecturer ID");
         panel1.add(idTF);
+
+        nameText = new JLabel();
+        nameText.setBounds(50, 90, 150, 25);
+        nameText.setText("Lecturer Name");
+        panel1.add(nameText);
 
         nameTF = new JTextField();
         nameTF.setBounds(50,120,150,25);
-        nameTF.setToolTipText("Enter lecturer name");
+        nameTF.setToolTipText("Enter Lecturer Name");
         panel1.add(nameTF);
+
+        passwordText = new JLabel();
+        passwordText.setBounds(50, 150, 150, 25);
+        passwordText.setText("Password");
+        panel1.add(passwordText);
 
         passwordTF = new JTextField();
         passwordTF.setBounds(50,180,150,25);
         passwordTF.setToolTipText("Enter Password");
         panel1.add(passwordTF);
+
+        contactText = new JLabel();
+        contactText.setBounds(50, 210, 150, 25);
+        contactText.setText("Contact No");
+        panel1.add(contactText);
 
         contactNoTF = new JTextField();
         contactNoTF.setBounds(50,240,150,25);
@@ -63,7 +88,6 @@ public class LecturerScreen extends JFrame {
         label.setText("All Lecturers");
         label.setBounds(500, 10, 200, 25);
         panel1.add(label);
-
 
         list = new JList<>(listModel);
         list.setBounds(350,60,400,400);

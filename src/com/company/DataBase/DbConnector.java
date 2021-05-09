@@ -10,8 +10,8 @@ public class DbConnector {
     private static String dataBaseName;
     final String DB_DATABASE = "vgc";
     final String DB_URL = "jdbc:mysql://localhost:3306/" + DB_DATABASE;
-    final String DB_USER = "USER";
-    final String DB_PASSWORD = "******";
+    final String DB_USER = "LuanaHF";
+    final String DB_PASSWORD = "12232321";
     private Connection connection;
 
     public DbConnector() throws SQLException {

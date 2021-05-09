@@ -14,6 +14,13 @@ public class StudentScreen extends JFrame {
 
     JPanel panel1;
 
+    JLabel idText;
+    JLabel nameText;
+    JLabel contactText;
+    JLabel passwordText;
+    JLabel semesterText;
+    JLabel classText;
+
     JTextField idTF;
     JTextField nameTF;
     JTextField contactNoTF;
@@ -45,34 +52,64 @@ public class StudentScreen extends JFrame {
 
         listModel = dbOperations.getStudents("Select * from Student");
 
+        idText = new JLabel();
+        idText.setBounds(50, 30, 150, 25);
+        idText.setText("Student ID");
+        panel1.add(idText);
+
         idTF = new JTextField();
         idTF.setBounds(50, 60, 150, 25);
-        idTF.setToolTipText("Enter student Id");
+        idTF.setToolTipText("Enter student ID");
         panel1.add(idTF);
+
+        nameText = new JLabel();
+        nameText.setBounds(50, 90, 150, 25);
+        nameText.setText("Student Name");
+        panel1.add(nameText);
 
         nameTF = new JTextField();
         nameTF.setBounds(50, 120, 150, 25);
         nameTF.setToolTipText("Enter student name");
         panel1.add(nameTF);
 
+        passwordText = new JLabel();
+        passwordText.setBounds(50, 150, 150, 25);
+        passwordText.setText("Password");
+        panel1.add(passwordText);
+
         passwordTF = new JTextField();
         passwordTF.setBounds(50, 180, 150, 25);
         passwordTF.setToolTipText("Enter Password");
         panel1.add(passwordTF);
+
+        contactText = new JLabel();
+        contactText.setBounds(50, 210, 150, 25);
+        contactText.setText("Contact No");
+        panel1.add(contactText);
 
         contactNoTF = new JTextField();
         contactNoTF.setBounds(50, 240, 150, 25);
         contactNoTF.setToolTipText("Enter student contact no");
         panel1.add(contactNoTF);
 
+        semesterText = new JLabel();
+        semesterText.setBounds(50, 270, 150, 25);
+        semesterText.setText("Semester");
+        panel1.add(semesterText);
+
         semesterTF = new JTextField();
         semesterTF.setBounds(50, 300, 150, 25);
-        semesterTF.setToolTipText("Enter semester of student");
+        semesterTF.setToolTipText("Enter student's semester");
         panel1.add(semesterTF);
+
+        classText = new JLabel();
+        classText.setBounds(50, 330, 150, 25);
+        classText.setText("Select Class ID");
+        panel1.add(classText);
 
         classCB = new JComboBox<>();
         classCB.setBounds(50, 360, 150, 25);
-        classCB.setToolTipText("Select class Id to be assigned to student");
+        classCB.setToolTipText("Select class ID to be assigned to the student");
         setClassRoomComboBox();
         panel1.add(classCB);
 

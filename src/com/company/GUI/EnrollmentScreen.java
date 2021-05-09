@@ -13,9 +13,14 @@ public class EnrollmentScreen extends JFrame {
 
     JPanel panel1;
 
+    JLabel studentText;
+    JLabel lecturerText;
+    JLabel moduleText;
+    JLabel classText;
+
     JComboBox<String> studentCB;
     JComboBox<String> lecturerCB;
-    JComboBox<String> courseCB;
+    JComboBox<String> moduleCB;
     JComboBox<String> classCB;
 
     JButton addButton;
@@ -39,28 +44,48 @@ public class EnrollmentScreen extends JFrame {
             throwables.printStackTrace();
         }
 
+        studentText = new JLabel();
+        studentText.setBounds(50, 30, 150, 25);
+        studentText.setText("Student ID");
+        panel1.add(studentText);
+
         studentCB = new JComboBox<>();
         studentCB.setBounds(50, 60, 150, 25);
-        studentCB.setToolTipText("Select student Id");
+        studentCB.setToolTipText("Select student ID");
         setStudentComboBox();
         panel1.add(studentCB);
 
-        courseCB = new JComboBox<>();
-        courseCB.setBounds(50, 120, 150, 25);
-        courseCB.setToolTipText("Select course Id");
+        moduleText = new JLabel();
+        moduleText.setBounds(50, 90, 150, 25);
+        moduleText.setText("Module ID");
+        panel1.add(moduleText);
+
+        moduleCB = new JComboBox<>();
+        moduleCB.setBounds(50, 120, 150, 25);
+        moduleCB.setToolTipText("Select module ID");
         setCourseComboBox();
-        panel1.add(courseCB);
+        panel1.add(moduleCB);
+
+        lecturerText = new JLabel();
+        lecturerText.setBounds(50, 150, 150, 25);
+        lecturerText.setText("Lecturer ID");
+        panel1.add(lecturerText);
 
         lecturerCB = new JComboBox<>();
         lecturerCB.setBounds(50, 180, 150, 25);
-        lecturerCB.setToolTipText("Select lecturer Id");
+        lecturerCB.setToolTipText("Select Lecturer ID");
         setLecturerComboBox();
         panel1.add(lecturerCB);
+
+        classText = new JLabel();
+        classText.setBounds(50, 210, 150, 25);
+        classText.setText("Class ID");
+        panel1.add(classText);
 
         classCB = new JComboBox<>();
         classCB.setBounds(50, 240, 150, 25);
         setClassRoomComboBox();
-        classCB.setToolTipText("Select Class Id");
+        classCB.setToolTipText("Select Class ID");
         panel1.add(classCB);
 
         JLabel label = new JLabel();
@@ -94,7 +119,7 @@ public class EnrollmentScreen extends JFrame {
                 try {
                     String studentId = String.valueOf(studentCB.getSelectedItem());
                     String lecturerId = String.valueOf(lecturerCB.getSelectedItem());
-                    String courseId = String.valueOf(courseCB.getSelectedItem());
+                    String courseId = String.valueOf(moduleCB.getSelectedItem());
                     String classId = String.valueOf(classCB.getSelectedItem());
 
                     DbOperations dbOperations = new DbOperations();
@@ -163,7 +188,7 @@ public class EnrollmentScreen extends JFrame {
 
             for (int i = 0; i < courses.size(); i++) {
                 Course course = courses.get(i);
-                courseCB.addItem(course.getCourseId());
+                moduleCB.addItem(course.getCourseId());
             }
 
         } catch (SQLException throwables) {

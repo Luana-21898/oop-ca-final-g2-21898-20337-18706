@@ -17,6 +17,10 @@ public class AttendanceScreen extends JFrame {
 
     JPanel panel1;
 
+    JLabel courseText;
+    JLabel classText;
+    JLabel studentText;
+
     JComboBox<String> courseCB;
     JComboBox<String> studentCB;
     JComboBox<String> classCB;
@@ -44,16 +48,26 @@ public class AttendanceScreen extends JFrame {
         setLayout(null);
         panel1.setBorder(new EmptyBorder(5, 5, 5, 5));
 
+        courseText = new JLabel();
+        courseText.setBounds(50, 30, 150, 25);
+        courseText.setText("Module ID");
+        panel1.add(courseText);
+
         courseCB = new JComboBox<>();
         courseCB.setBounds(50, 60, 150, 25);
         setCourseComboBox();
-        courseCB.setToolTipText("Select course Id");
+        courseCB.setToolTipText("Select module ID");
         panel1.add(courseCB);
+
+        classText = new JLabel();
+        classText.setBounds(50, 90, 150, 25);
+        classText.setText("Classroom ID");
+        panel1.add(classText);
 
         classCB = new JComboBox<>();
         classCB.setBounds(50, 120, 150, 25);
         setClassRoomComboBox();
-        classCB.setToolTipText("Select Class Room Id");
+        classCB.setToolTipText("Select Classroom ID");
         panel1.add(classCB);
 
         loadButton = new JButton("Load Students");
@@ -68,23 +82,28 @@ public class AttendanceScreen extends JFrame {
         allAbsentCB.setBounds(50, 280, 150, 30);
         panel1.add(allAbsentCB);
 
-        JLabel label = new JLabel("Enter student details if he/she is absent.");
-        label.setBounds(20, 320, 250, 15);
+        JLabel label = new JLabel("Enter student's absence details.");
+        label.setBounds(50, 320, 250, 15);
         panel1.add(label);
 
-        JLabel label2 = new JLabel("Make sure you've unchecked above two boxes.");
-        label2.setBounds(20, 370, 270, 10);
+        JLabel label2 = new JLabel("Make sure to uncheck the boxes above.");
+        label2.setBounds(50, 350, 270, 10);
         panel1.add(label2);
+
+        studentText = new JLabel();
+        studentText.setBounds(50, 370, 150, 25);
+        studentText.setText("Student ID");
+        panel1.add(studentText);
 
         studentCB = new JComboBox<>();
         studentCB.setBounds(50, 400, 150, 25);
         setStudentComboBox();
-        studentCB.setToolTipText("Enter student Id");
+        studentCB.setToolTipText("Enter student ID");
         panel1.add(studentCB);
 
 
         JLabel label1 = new JLabel();
-        label1.setText("Enrolled students");
+        label1.setText("Enrolled Students");
         label1.setBounds(500, 10, 200, 25);
         panel1.add(label1);
 
@@ -117,7 +136,7 @@ public class AttendanceScreen extends JFrame {
             }
         });
 
-        saveButton = new JButton("SAVE");
+        saveButton = new JButton("Save");
         saveButton.setBounds(400, 470, 100, 30);
         panel1.add(saveButton);
 
